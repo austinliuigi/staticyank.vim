@@ -20,9 +20,9 @@ noremap <expr><silent> <Plug>StaticYank '<cmd>call <SID>StorePreYankPos()<CR>' .
 " xnoremap <expr><silent> <Plug>StaticYankVisual '<cmd>call <SID>StorePreYankPos()<CR>' . '<cmd>set operatorfunc=<SID>StaticYank<CR>' . v:count1 . 'g@'
 nnoremap <Plug>StaticYankLine yy
 
-let g:static_yank_enable = exists("g:static_yank_enable") ? g:static_yank_enable : 1
+let g:static_yank_disable = exists("g:static_yank_disable") ? g:static_yank_disable : 0
 
-if g:static_yank_enable
+if !g:static_yank_disable
     map y <Plug>StaticYank
     nmap yy <Plug>StaticYankLine
 endif
