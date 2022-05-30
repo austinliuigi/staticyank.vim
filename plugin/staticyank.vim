@@ -15,12 +15,14 @@ function! s:StaticYank(type)
     call setpos('.', s:pre_yank_pos)
 endfunction
 
-nnoremap <expr><silent> <Plug>StaticYank '<cmd>call <SID>StorePreYankPos()<CR>' . ':set operatorfunc=<SID>StaticYank<CR>' . v:count1 . 'g@'
+noremap <expr><silent> <Plug>StaticYank '<cmd>call <SID>StorePreYankPos()<CR>' . '<cmd>set operatorfunc=<SID>StaticYank<CR>' . v:count1 . 'g@'
+" nnoremap <expr><silent> <Plug>StaticYank '<cmd>call <SID>StorePreYankPos()<CR>' . '<cmd>set operatorfunc=<SID>StaticYank<CR>' . v:count1 . 'g@'
+" xnoremap <expr><silent> <Plug>StaticYankVisual '<cmd>call <SID>StorePreYankPos()<CR>' . '<cmd>set operatorfunc=<SID>StaticYank<CR>' . v:count1 . 'g@'
 nnoremap <Plug>StaticYankLine yy
 
 let g:static_yank_enable = exists("g:static_yank_enable") ? g:static_yank_enable : 1
 
 if g:static_yank_enable
-    nmap y <Plug>StaticYank
+    map y <Plug>StaticYank
     nmap yy <Plug>StaticYankLine
 endif
