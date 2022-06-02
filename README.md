@@ -1,4 +1,4 @@
-# yankie
+# staticyank.vim
 Yank without moving the cursor
 
 # Installation
