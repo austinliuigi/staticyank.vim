@@ -15,7 +15,7 @@ function! s:StaticYank(type)
     call setpos('.', s:pre_yank_pos)
 endfunction
 
-noremap <expr><silent> <Plug>StaticYank '<cmd>call <SID>StorePreYankPos()<CR>' . '<cmd>set operatorfunc=<SID>StaticYank<CR>' . v:count1 . 'g@'
+noremap <expr><silent> <Plug>StaticYank ':<C-u>call <SID>StorePreYankPos()<CR>' . ':<C-u>set operatorfunc=<SID>StaticYank<CR>' . v:count1 . 'g@'
 " nnoremap <expr><silent> <Plug>StaticYank '<cmd>call <SID>StorePreYankPos()<CR>' . '<cmd>set operatorfunc=<SID>StaticYank<CR>' . v:count1 . 'g@'
 " xnoremap <expr><silent> <Plug>StaticYankVisual '<cmd>call <SID>StorePreYankPos()<CR>' . '<cmd>set operatorfunc=<SID>StaticYank<CR>' . v:count1 . 'g@'
 nnoremap <Plug>StaticYankLine yy
