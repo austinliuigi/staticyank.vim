@@ -24,6 +24,7 @@ nnoremap <Plug>StaticYankLine yy
 let g:static_yank_disable = exists("g:static_yank_disable") ? g:static_yank_disable : 0
 
 if !g:static_yank_disable
-    map y <Plug>StaticYank
+    nmap y <Plug>StaticYank
+    xmap y <Plug>StaticYank
     nmap yy <Plug>StaticYankLine
 endif
